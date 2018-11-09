@@ -10,7 +10,58 @@
     <!-- Medium Style Editor -->
 
     <!-- CSS -->
-
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        color: #1e8bff;
+      }
+      .wrapper{
+        width: 100%;
+        height: 100vh;
+      }
+      .nav_bar{
+        background: none;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+      }
+      .nav_bar ul{
+        list-style: none;
+      }
+      .left{
+        display: flex;
+        width: 50%;
+      }
+      .right{
+        display: flex;
+        width: 50%;
+      }
+      .left li{
+        padding: 10px 14px 10px 30px;
+      }
+      .left li a{
+        text-decoration: none;
+        color: #1e8bff;
+      }
+      .left li a:hover{
+        color: #000;
+      }
+      .right li{
+        padding: 10px 14px 10px 30px;
+      }
+      .right li a{
+        text-decoration: none;
+        color: #1e8bff;
+      }
+      .right li a:hover{
+        color: #000;
+      }
+      .blog_posts a{
+        text-decoration: none !important;
+      }
+    </style>
     <!-- Fonts -->
 
 
@@ -20,17 +71,17 @@
   <body>
 
     <!-- NAVBAR -->
-
-    <nav class="navbar navbar-default techfont  custom-navbar">
-      <div class="container">
-        <ul>
+    <div class="wrapper">
+    <nav>
+      <div class="nav_bar">
+        <ul class="left">
           <li><a class="nav-brand bigbrand" href="{% url 'post_list' %}">My Blog</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="https://www.github.com">Github</a></li>
           <li><a href="https://www.facebook.com">Facebook</a></li>
         </ul>
 
-        <ul class="nav navbar-nav nav navbar-right">
+        <ul class="right">
           {% if user.is_authenticated %}
           <li>
             <a href="{% url 'post_new' %}">New Post</a>
@@ -68,9 +119,7 @@
 
       </div>
 
-
     </div>
-
-
+    </div>
   </body>
 </html>
